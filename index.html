@@ -27,7 +27,7 @@
 
         body {
             font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-bright) 50%, #9B4DBB 100%);
+            background: linear-gradient(135deg, #87CEEB 0%, #98D8AA 50%, #7BC47F 100%);
             min-height: 100vh;
             padding: 20px;
             position: relative;
@@ -37,18 +37,18 @@
         /* Floating dinosaurs background */
         .dino {
             position: fixed;
-            font-size: 35px;
-            opacity: 0.4;
+            font-size: 60px;
+            opacity: 0.6;
             animation: float 6s ease-in-out infinite;
             z-index: 0;
         }
 
-        .dino:nth-child(1) { left: 5%; top: 10%; animation-delay: 0s; }
-        .dino:nth-child(2) { left: 15%; top: 25%; animation-delay: 1s; }
-        .dino:nth-child(3) { left: 85%; top: 15%; animation-delay: 2s; }
-        .dino:nth-child(4) { left: 90%; top: 45%; animation-delay: 0.5s; }
-        .dino:nth-child(5) { left: 8%; top: 60%; animation-delay: 1.5s; }
-        .dino:nth-child(6) { left: 88%; top: 70%; animation-delay: 2.5s; }
+        .dino:nth-child(1) { left: 3%; top: 8%; animation-delay: 0s; }
+        .dino:nth-child(2) { left: 12%; top: 30%; animation-delay: 1s; }
+        .dino:nth-child(3) { left: 82%; top: 12%; animation-delay: 2s; }
+        .dino:nth-child(4) { left: 88%; top: 50%; animation-delay: 0.5s; }
+        .dino:nth-child(5) { left: 5%; top: 65%; animation-delay: 1.5s; }
+        .dino:nth-child(6) { left: 85%; top: 75%; animation-delay: 2.5s; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(-5deg); }
@@ -110,7 +110,7 @@
 
         .invite-text {
             font-family: 'Baloo 2', cursive;
-            color: var(--purple-deep);
+            color: #2E7D32;
             font-size: 18px;
             font-weight: 500;
             margin-bottom: 5px;
@@ -120,7 +120,7 @@
             font-family: 'Baloo 2', cursive;
             font-size: 42px;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--purple-deep), var(--orange-fun));
+            background: linear-gradient(135deg, #2E7D32, #FF6B35);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -181,7 +181,7 @@
 
         .detail-content h3 {
             font-family: 'Baloo 2', cursive;
-            color: var(--purple-deep);
+            color: #2E7D32;
             font-size: 16px;
             font-weight: 700;
             margin-bottom: 2px;
@@ -267,7 +267,7 @@
         .rsvp-header h2 {
             font-family: 'Baloo 2', cursive;
             font-size: 32px;
-            color: var(--purple-deep);
+            color: #2E7D32;
             margin-bottom: 5px;
         }
 
@@ -284,7 +284,7 @@
         .form-group label {
             display: block;
             font-family: 'Baloo 2', cursive;
-            color: var(--purple-deep);
+            color: #2E7D32;
             font-size: 15px;
             font-weight: 600;
             margin-bottom: 8px;
@@ -307,8 +307,8 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--purple-bright);
-            box-shadow: 0 0 0 4px rgba(139, 58, 155, 0.15);
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
         }
 
         .form-group textarea {
@@ -343,7 +343,7 @@
         }
 
         .attendance-option label:hover {
-            border-color: var(--purple-bright);
+            border-color: #4CAF50;
             transform: translateY(-2px);
         }
 
@@ -452,15 +452,15 @@
         }
 
         .footer p {
-            color: rgba(255,255,255,0.9);
+            color: #2E7D32;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .footer a {
-            color: var(--yellow-pop);
+            color: #1B5E20;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .footer-contacts {
@@ -471,14 +471,14 @@
         }
 
         .footer-contact {
-            color: rgba(255,255,255,0.9);
+            color: #2E7D32;
             font-size: 14px;
         }
 
         .footer-contact span {
             display: block;
-            font-weight: 600;
-            color: white;
+            font-weight: 700;
+            color: #1B5E20;
         }
 
         /* Responsive */
