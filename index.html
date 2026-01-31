@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiaan's Birthday Party 🎈</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple-deep: #6B2D7B;
+            --purple-bright: #8B3A9B;
+            --green-pump: #4CAF50;
+            --orange-fun: #FF6B35;
+            --yellow-pop: #FFD93D;
+            --blue-bounce: #3498db;
+            --white: #ffffff;
+            --gray-light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-bright) 50%, #9B4DBB 100%);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating dinosaurs background */
+        .dino {
+            position: fixed;
+            font-size: 35px;
+            opacity: 0.4;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .dino:nth-child(1) { left: 5%; top: 10%; animation-delay: 0s; }
+        .dino:nth-child(2) { left: 15%; top: 25%; animation-delay: 1s; }
+        .dino:nth-child(3) { left: 85%; top: 15%; animation-delay: 2s; }
+        .dino:nth-child(4) { left: 90%; top: 45%; animation-delay: 0.5s; }
+        .dino:nth-child(5) { left: 8%; top: 60%; animation-delay: 1.5s; }
+        .dino:nth-child(6) { left: 88%; top: 70%; animation-delay: 2.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Card */
+        .header-card {
+            background: var(--white);
+            border-radius: 30px;
+            padding: 30px 25px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header-card::before {
+            content: '🦕🎉🦖';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            letter-spacing: 10px;
+        }
+
+        .kiaan-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 20%;
+            border: 5px solid var(--yellow-pop);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            margin: 35px auto 15px;
+            display: block;
+            animation: photoAppear 0.8s ease-out 0.3s both;
+        }
+
+        @keyframes photoAppear {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .invite-text {
+            font-family: 'Baloo 2', cursive;
+            color: var(--purple-deep);
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .party-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--purple-deep), var(--orange-fun));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .party-subtitle {
+            font-family: 'Baloo 2', cursive;
+            font-size: 28px;
+            color: var(--green-pump);
+            font-weight: 700;
+        }
+
+        .cake-icon {
+            font-size: 40px;
+            margin: 10px 0;
+            animation: bounce 1s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Details Card */
+        .details-card {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            animation: slideUp 0.6s ease-out 0.2s both;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 2px dashed #eee;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-icon {
+            font-size: 28px;
+            margin-right: 15px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .detail-content h3 {
+            font-family: 'Baloo 2', cursive;
+            color: var(--purple-deep);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .detail-content p {
+            color: #555;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .detail-content a {
+            color: var(--blue-bounce);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .host-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .host-person {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .host-name {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .early-note {
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            padding: 12px 18px;
+            border-radius: 15px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .early-note p {
+            color: #1565C0;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .waiver-note {
+            background: linear-gradient(135deg, var(--yellow-pop), #FFE066);
+            padding: 12px 18px;
+            border-radius: 15px;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .waiver-note p {
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .waiver-note a {
+            color: #333;
+            text-decoration: underline;
+        }
+
+        /* RSVP Form Card */
+        .rsvp-card {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            animation: slideUp 0.6s ease-out 0.4s both;
+        }
+
+        .rsvp-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .rsvp-header h2 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 32px;
+            color: var(--purple-deep);
+            margin-bottom: 5px;
+        }
+
+        .rsvp-header p {
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Baloo 2', cursive;
+            color: var(--purple-deep);
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--purple-bright);
+            box-shadow: 0 0 0 4px rgba(139, 58, 155, 0.15);
+        }
+
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .attendance-options {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .attendance-option {
+            flex: 1;
+        }
+
+        .attendance-option input {
+            display: none;
+        }
+
+        .attendance-option label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 10px;
+            border: 3px solid #e0e0e0;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--gray-light);
+        }
+
+        .attendance-option label:hover {
+            border-color: var(--purple-bright);
+            transform: translateY(-2px);
+        }
+
+        .attendance-option input:checked + label {
+            border-color: var(--green-pump);
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+            transform: scale(1.02);
+        }
+
+        .attendance-option input[value="no"]:checked + label {
+            border-color: var(--orange-fun);
+            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+        }
+
+        .attendance-option input[value="maybe"]:checked + label {
+            border-color: var(--yellow-pop);
+            background: linear-gradient(135deg, #FFFDE7, #FFF9C4);
+        }
+
+        .option-icon {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .option-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .guest-count-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .guest-count-row .form-group {
+            flex: 1;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--green-pump), #66BB6A);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-family: 'Baloo 2', cursive;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.5);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: successPop 0.5s ease-out;
+        }
+
+        @keyframes successPop {
+            0% { opacity: 0; transform: scale(0.8); }
+            50% { transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .success-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .success-message h3 {
+            font-family: 'Baloo 2', cursive;
+            color: var(--green-pump);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .success-message p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            padding: 15px;
+            animation: slideUp 0.6s ease-out 0.6s both;
+        }
+
+        .footer p {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .footer a {
+            color: var(--yellow-pop);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+        }
+
+        .footer-contact span {
+            display: block;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 400px) {
+            .party-title {
+                font-size: 34px;
+            }
+            
+            .attendance-options {
+                flex-direction: column;
+            }
+            
+            .guest-count-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .footer-contacts {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative dinosaurs -->
+    <div class="dino">🦕</div>
+    <div class="dino">🦖</div>
+    <div class="dino">🦕</div>
+    <div class="dino">🦖</div>
+    <div class="dino">🦕</div>
+    <div class="dino">🦖</div>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card">
+            <p class="invite-text">You're Invited to</p>
+            <h1 class="party-title">KIAAN'S</h1>
+            <p class="party-subtitle">Birthday Party!</p>
+            <div class="cake-icon">🎂</div>
+        </div>
+
+        <!-- Details Card -->
+        <div class="details-card">
+            <div class="detail-row">
+                <span class="detail-icon">📅</span>
+                <div class="detail-content">
+                    <h3>When</h3>
+                    <p>Friday, February 13th, 2026<br>6:30 PM – 8:30 PM</p>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <span class="detail-icon">📍</span>
+                <div class="detail-content">
+                    <h3>Where</h3>
+                    <p>Pump It Up of Shelby TWP<br>
+                    15117 Commercial Dr.<br>
+                    Shelby Township, MI 48315</p>
+                    <a href="https://maps.google.com/?q=15117+Commercial+Dr+Shelby+Township+MI+48315" target="_blank">Get Directions →</a>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <span class="detail-icon">📞</span>
+                <div class="detail-content">
+                    <h3>Hosts</h3>
+                    <div class="host-info">
+                        <div class="host-person">
+                            <span class="host-name">Sagar</span>
+                            <a href="tel:717-606-5880">717-606-5880</a>
+                        </div>
+                        <div class="host-person">
+                            <span class="host-name">Unnati</span>
+                            <a href="tel:980-267-7171">980-267-7171</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="waiver-note">
+                <p>📋 <a href="https://kiosk.pumpitupparty.com/66/register-customer/ldWbgo0HzSKN" target="_blank">Complete Waiver Form</a></p>
+            </div>
+
+            <div class="early-note">
+                <p>⏰ Please arrive 15 minutes early to sign in!</p>
+            </div>
+        </div>
+
+        <!-- RSVP Form Card -->
+        <div class="rsvp-card">
+            <div class="rsvp-header">
+                <h2>RSVP 🦕</h2>
+                <p>Please respond by February 7th, 2026</p>
+            </div>
+
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label>Will you be joining us?</label>
+                    <div class="attendance-options">
+                        <div class="attendance-option">
+                            <input type="radio" name="attending" id="yes" value="yes" required>
+                            <label for="yes">
+                                <span class="option-icon">🎉</span>
+                                <span class="option-text">Yes!</span>
+                            </label>
+                        </div>
+                        <div class="attendance-option">
+                            <input type="radio" name="attending" id="no" value="no">
+                            <label for="no">
+                                <span class="option-icon">😢</span>
+                                <span class="option-text">Can't make it</span>
+                            </label>
+                        </div>
+                        <div class="attendance-option">
+                            <input type="radio" name="attending" id="maybe" value="maybe">
+                            <label for="maybe">
+                                <span class="option-icon">🤔</span>
+                                <span class="option-text">Maybe</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="parentName">Your Name *</label>
+                    <input type="text" id="parentName" name="parentName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="childName">Child's Name *</label>
+                    <input type="text" id="childName" name="childName" placeholder="Enter child's name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+                </div>
+
+                <div class="guest-count-row">
+                    <div class="form-group">
+                        <label for="numKids"># of Kids</label>
+                        <select id="numKids" name="numKids">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="numAdults"># of Adults</label>
+                        <select id="numAdults" name="numAdults">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Send RSVP 🦖</button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">🎊</div>
+                <h3>Thank You!</h3>
+                <p>Your RSVP has been received.<br>We can't wait to celebrate with you!</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p style="margin-bottom: 10px;">Questions? Call or text:</p>
+            <div class="footer-contacts">
+                <div class="footer-contact">
+                    <span>Sagar</span>
+                    <a href="tel:717-606-5880">717-606-5880</a>
+                </div>
+                <div class="footer-contact">
+                    <span>Unnati</span>
+                    <a href="tel:980-267-7171">980-267-7171</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // GOOGLE APPS SCRIPT URL
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwXK4I2OuISU5cfpwNys1U2aTQGJTFWcBrsAZkfwHAK9xR9qfgeLQmj4wd6tbwkHBCDqQ/exec';
+
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                attending: document.querySelector('input[name="attending"]:checked')?.value,
+                parentName: document.getElementById('parentName').value,
+                childName: document.getElementById('childName').value,
+                phone: document.getElementById('phone').value,
+                numKids: document.getElementById('numKids').value,
+                numAdults: document.getElementById('numAdults').value,
+                timestamp: new Date().toLocaleString()
+            };
+            
+            // Send to Google Sheets using URL parameters
+            const params = new URLSearchParams(formData).toString();
+            fetch(GOOGLE_SCRIPT_URL + '?' + params, {
+                method: 'GET',
+                mode: 'no-cors'
+            });
+            
+            // Show success message
+            document.getElementById('rsvpForm').style.display = 'none';
+            document.getElementById('successMessage').classList.add('show');
+            document.querySelector('.rsvp-card').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
